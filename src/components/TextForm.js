@@ -40,14 +40,14 @@ export default function TextForm(props) {
                 <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color:props.mode==='dark'?'white':'black'}} id="mybox" rows="8"></textarea>
 
             </div>
-            <button className={`btn btn-${props.mode==='light'?'primary':'dark'} mx-3`} style={{color: props.mode==='light'?'black':'white'}} onClick={handleUpClick}>convert to uppercase</button>
-            <button className={`btn btn-${props.mode==='light'?'primary':'dark'} mx-3`} style={{color: props.mode==='light'?'black':'white'}} onClick={handleLowClick}>convert to lowercase</button>
-            <button className={`btn btn-${props.mode==='light'?'primary':'dark'} mx-3`} style={{color: props.mode==='light'?'black':'white'}} onClick={clearClick}>Clear Text</button>
+            <button className={`btn btn-${props.mode==='light'?'primary':'dark'} mx-3 my-1`} style={{color: props.mode==='light'?'black':'white'}} onClick={handleUpClick}>convert to uppercase</button>
+            <button className={`btn btn-${props.mode==='light'?'primary':'dark'} mx-3 my-1`} style={{color: props.mode==='light'?'black':'white'}} onClick={handleLowClick}>convert to lowercase</button>
+            <button className={`btn btn-${props.mode==='light'?'primary':'dark'} mx-3 my-1`} style={{color: props.mode==='light'?'black':'white'}} onClick={clearClick}>Clear Text</button>
 
         </div>
         <div className="container my-3 " style={{color: props.mode==='light'?'black':'white'}}>
             <h1>Your Text Summary</h1>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
+            <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
             <h2>Preview</h2>
             <p>{text}</p>
 
